@@ -1,0 +1,283 @@
+html * {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr 100px;
+}
+
+.hero {
+    background-image: url("../images/hero_bg.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100vw;
+    text-align: center;
+    color: white;
+    /* display: relative; */
+}
+.hero h1 {
+    line-height: 120px;
+}
+
+.nav {
+    text-align: center;
+    padding: 1em;
+}
+.nav ul {
+    list-style: none;
+}
+.nav li {
+    padding: .25em;
+}
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-button {
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+.hamburger {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 3px;
+    background: white;
+    transition: .5s;
+    border-radius: 3px;
+    }
+.hamburger:after, .hamburger:before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: white;
+    transition: .5s;
+    border-radius: 3px;
+    transform: translate(-50%);
+    transform-origin: center;
+}
+.hamburger:before {
+    top: -10px;
+}
+.hamburger:after {
+    top: 10px;
+}
+
+
+.nav-button-transform .hamburger {
+    background: none;
+}
+.nav-button-transform .hamburger:before, .nav-button-transform .hamburger:after {
+    top: 0;
+    width: 35px;
+    height: 3px;
+}
+.nav-button-transform .hamburger:before {
+    transform: rotate(135deg);
+}
+.nav-button-transform .hamburger:after {
+    transform: rotate(-135deg);
+}
+
+.side-bar {
+    background: black;
+    /* padding: 1em; */
+}
+
+
+.home {
+    padding: 1em;
+}
+.home h1 {
+    text-align: center;
+}
+.home p {
+    text-align: center;
+    padding: 2em;
+}
+
+.space {
+    padding: 1em;
+    margin: 0 auto;
+}
+.space a {
+    background: lightgray;
+    color: black;
+    padding: .5em;
+    border-radius: 5px;
+}
+.space a:hover {
+    background: black;
+    color: white;
+}
+
+
+.footer {
+    text-align: center;
+    background-image: url("../images/hero_bg.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 1em;
+    align-self: center;
+}
+
+.footer a {
+    color: white;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+
+/**********Workout List View***********/
+.current-workout{
+}
+.current-workout-block h1 {
+    text-align: center;
+    background: rgb(223, 222, 222);
+    /* margin-bottom: .5em; */
+    padding: .5em 0;
+    text-transform: uppercase;
+}
+.current-workout-block li {
+    padding: .75em;
+    text-align: center;
+    border-top: solid 1px black;
+}
+.current-workout-block li:last-of-type {
+    border-bottom: solid 1px black;
+}
+.current-workout-block li a {
+    color: black;
+}
+.current-workout-block li a:hover {
+    color: rgb(105, 105, 105);
+}
+
+/**********Workout Detail View***********/
+.workout-detail {
+
+}
+
+.workout-detail h1 {
+    text-align: center;
+    background: rgb(223, 222, 222);
+    /* margin-bottom: .5em; */
+    padding: .5em 0;
+    text-transform: uppercase;
+}
+
+.workout-detail h4 {
+    text-align: center;
+    /* margin-bottom: 1em; */
+    padding: .5em;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+.workout-detail .exercises {
+    padding: 2em;
+    text-align: center;
+}
+
+.exercises .exercise {
+    color: black;
+    padding: .75em;
+    margin: 1em 0;
+    background: rgb(247, 247, 247);
+    border-radius: 5px;
+}
+.exercise:hover {
+    background: black;
+    color: white;
+}
+
+/************* Edit Delete Other Buttons **************/
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btn {
+    /* display: inline-block; */
+    /* background: gray; */
+    padding: .5em 1em;
+    color: white;
+    min-width: 100px;
+    text-align: center;
+}
+.btn:hover {
+    background: white;
+}
+
+.edit {
+    background: rgb(169, 179, 169);
+    border-radius: 5px 0 0 5px;
+}
+.edit:hover {
+    color: white;
+    background: rgb(132, 161, 132);
+}
+
+.delete {
+    background: rgb(180, 160, 160);
+}
+.delete:hover {
+    background: rgb(172, 118, 118);
+}
+
+.return {
+    background: rgb(144, 144, 165);
+    border-radius: 0 5px 5px 0;
+}
+.return:hover {
+    background: rgb(87, 102, 134);
+}
+
+/********* DELETE VIEW ************/
+.delete-view {
+    padding: 2em;
+    text-align: center;
+}
+.delete-view h1 {
+    color: red;
+    border-bottom: 1px solid red;
+    margin-bottom: 2em;
+}
+.delete-view form {
+    padding: 2em 1em;
+}
+.btn-danger {
+    background: red;
+    color: white;
+    border: none;
+    padding: 1em 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 1em;
+}
+.btn-cancel {
+    background: blue;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: .5em;
+}

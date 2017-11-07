@@ -1,0 +1,14 @@
+{% extends "counter/_layout.html" %}
+
+{% block content %}
+<div class="delete-view">
+    <h1>Delete {{ workout.title }}?</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" class="btn-danger" value="Delete"> 
+        <br>
+        <a href="{% url 'counter:detail' pk=workout.pk %}" class="btn-cancel">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

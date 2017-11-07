@@ -1,0 +1,21 @@
+{% extends "counter/_layout.html" %}
+
+{% block content %}
+
+
+<div class="edit-workout">
+    <h1>Edit {{ form.instance.name }}</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="" value="Save">
+        <a href="{% url 'counter:detail' pk=workout.pk %}" class="">Cancel</a>
+    </form>
+
+    {% for exercise in workout.exercises.all %}
+    <a href="{% url 'counter:exercise_detail' pk=exercise.pk %}"><h3>{{exercise.title}} | sets: {{exercise.sets}} | reps: {{exercise.reps}}</h3></a>
+    {% endfor %}
+
+</div>
+{% endblock %}

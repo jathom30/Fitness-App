@@ -1,0 +1,22 @@
+{% extends "counter/_layout.html" %}
+
+{% block content %}
+
+<div class="exercise-detail">
+    <h1>{{ exercise }}</h1>
+    <h3>{{ exercise.get_muscule_group_display }} | {{ exercise.get_equipment_display }}</h3>
+    <p>{{ exercise.description }}</p>
+    <hr>
+    <h4>{{ exercise.sets }} | {{ exercise.reps }}</h4>
+    <h4>{{ exercise.weight }}</h4>
+    
+
+    <p><a href="{% url 'counter:exercise_update' pk=exercise.pk %}" class="btn">Edit</a></p>
+
+    <p><a href="{% url 'counter:update' pk=workout.pk %}" class="btn">Edit</a></p>
+    
+    <p><a href="{% url 'counter:delete' pk=workout.pk %}" class="btn">Delete</a></p>
+
+    <a href="{% url 'counter:exercise_list'  %}">Return to list</a>
+
+</div>

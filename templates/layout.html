@@ -1,0 +1,67 @@
+<!doctype html>
+{% load static from staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+<div class="body">
+    <div class="hero">
+        <h1>Lift Log</h1>
+
+        <div class="nav-button">
+            <div class="hamburger"></div>
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'counter:create' %}">Create a new workout</a>
+                </li>
+                <li>
+                    <a href="{% url 'counter:list' %}">See a list of current workouts</a>
+                </li>
+                <li>
+                    <a href="{% url 'counter:exercise_list' %}">Create a new exercise</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    {% block side-bar %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
+    <div class="footer">
+        <a href="{% url 'home' %}">home</a>
+        <p>© Jeff Thomas 2017</p>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    var $navButton = $('.nav-button')
+    
+    
+    $('.nav').hide();
+    
+    $navButton.click(function() {
+        $navButton.toggleClass('nav-button-transform')
+        $('.nav').slideToggle();
+    })
+    
+    $('.nav').children().click(function() {
+        $(this).parent().hide();
+        $navButton.removeClass('nav-button-transform');
+    })
+</script>
+</body>
+
+</html>

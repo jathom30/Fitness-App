@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="current-workout">
+    <h1>Current Exercises</h1>
+
+    <div class="workout_list">
+        {% for exercise in exercises %}
+            <p>{{ exercise.title }}</p>
+            <p>{{ exercise.pk }}</p>
+        {% endfor %}
+    </div>
+
+    <hr>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="" value="Save">
+    </form>
+</div>
+
+{% endblock content %}

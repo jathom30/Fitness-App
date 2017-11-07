@@ -1,0 +1,14 @@
+{% extends "counter/_layout.html" %}
+
+{% block content %}
+    <div class="create-workout">
+        <h1>Create new Workout</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="" value="Save">
+            <a href="{% url 'counter:list' %}" class="">Cancel</a>
+        </form>
+
+    </div>
+{% endblock %}

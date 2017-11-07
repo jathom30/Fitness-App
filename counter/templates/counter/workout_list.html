@@ -1,0 +1,30 @@
+{% extends "counter/_layout.html" %}
+
+{% block content %}
+
+<div class="current-workout">
+    <div class="current-workout-block">
+        <h1>Current Workouts:</h1>
+        <ul>
+        {% for workout in workouts  %}
+            <li>
+                <a href="{% url 'counter:detail' pk=workout.pk %}">
+                    <h3>{{ workout.title }}</h3>
+                    <p>{{ workout.description }}</p>
+                    <p>{{ workout.pk }}</p>
+                </a>
+            </li>
+        {% endfor %}    
+        </ul>  
+    </div>
+
+    <h1>Create a New Workout:</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="" value="Save">
+    </form>
+</div>
+
+{% endblock content %}

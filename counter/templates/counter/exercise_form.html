@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="side-bar">
+    <h2>Side-bar/Saved Workouts</h2>
+    <p>future workout links</p>    
+</div>
+
+<div class="edit-exercise">
+    <h1>{{ page_title }}</h1>
+    
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="" value="Save">
+        </form>
+</div>
+
+
+{% endblock %}

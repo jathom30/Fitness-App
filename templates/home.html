@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %} Lift Log{% endblock %}
+
+{% block content %}
+<div class="home">
+    <h1>Lift Log</h1>
+    <p>Create and manage a workout routine.</p>
+</div>
+
+<div class="space">
+        <a href="{% url 'counter:create' %}">Create a new workout</a>
+        <a href="{% url 'counter:exercise_list' %}">Create a new exercise</a>
+</div>
+
+{% endblock %}
