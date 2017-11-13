@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="create-workout">
-        <h1>Create new Workout</h1>
+        <h1>Create a new Workout</h1>
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}

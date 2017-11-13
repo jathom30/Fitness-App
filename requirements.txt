@@ -1,0 +1,6 @@
+Django==1.11.5
+django-braces==1.11.0
+django-debug-toolbar==1.8
+markdown2==2.3.4
+pytz==2017.2
+sqlparse==0.2.4

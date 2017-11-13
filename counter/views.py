@@ -43,21 +43,16 @@ class WorkoutDeleteView(DeleteView):
     model = models.Workout
     success_url = reverse_lazy('counter:list')
 
-    # def get_queryset(self):
-    #     if not self.request.user.is_superuser:
-    #         return self.model.objects.filter(coach=self.request.user)
-    #     return self.model.objects.all()
 
-
-class ExerciseListView(CreateView, ListView):
-    context_object_name = 'exercises'
-    model = models.Exercise
+class ExerciseCreateView(CreateView):
     fields = ('title', 'muscule_group', 'equipment', 'sets', 'reps', 'weight', 'workout')
-    template_name = 'counter/exercise_list.html'
+    model = models.Exercise
+    template_name = 'counter/exercise_create.html'
 
 
 class ExerciseDetailView(DetailView):
-    fields = ('title', 'equipment')
+    context_object_name = 'exercises'
+    # fields = ('title', 'equipment')
     model = models.Exercise
     template_name = 'counter/exercise_detail'
 
@@ -65,7 +60,3 @@ class ExerciseDetailView(DetailView):
 class ExerciseUpdateView(UpdateView):
     fields = ('title', 'muscule_group', 'equipment', 'sets', 'reps', 'weight', 'workout')
     model = models.Workout
-
-    # def get_page_title(self):
-    #     obj = self.get_object()
-    #     return "Update {}".format(obj.name)

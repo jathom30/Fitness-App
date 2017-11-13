@@ -8,6 +8,6 @@ urlpatterns = [
     url(r'^create/$', views.WorkoutCreateView.as_view(), name='create'),
     url(r'^edit/(?P<pk>\d+)/$', views.WorkoutUpdateView.as_view(), name='update'),
     url(r'^delete/(?P<pk>\d+)/$', views.WorkoutDeleteView.as_view(), name='delete'),
-    url(r'^exercise/$', views.ExerciseListView.as_view(), name='exercise_list'),
-    url(r'^exercise/(?P<pk>\d+)/$', views.ExerciseDetailView.as_view(), name='exercise_detail'),
+    url(r'exercise/$', views.ExerciseCreateView.as_view(), name='exercise_create'),
+    url(r'exercise/(?P<pk>\d+)/$', views.ExerciseDetailView.as_view(), name='exercise_detail'),
 ]

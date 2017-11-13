@@ -207,6 +207,15 @@ a {
     color: white;
 }
 
+.add-exercises {
+    padding: 1em;
+}
+.add-exercises a {
+    /* width: 90vw; */
+    display: block;
+    width: 
+}
+
 /************* Edit Delete Other Buttons **************/
 .buttons {
     display: flex;
@@ -249,6 +258,13 @@ a {
     background: rgb(87, 102, 134);
 }
 
+.add {
+    background: rgb(169, 198, 218);
+    border-radius: 5px;
+}
+.add:hover {
+    background: rgb(110, 166, 204);
+}
 /********* DELETE VIEW ************/
 .delete-view {
     padding: 2em;
