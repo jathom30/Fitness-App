@@ -11,5 +11,7 @@ Create workouts with custom exercises.
 
 
 With venv running and pip install complete: 
-    run: __python manage.py migrate__
-    then: __python manage.py runserver__
+
+run: __python manage.py migrate__
+
+then: __python manage.py runserver__
