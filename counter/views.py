@@ -48,15 +48,21 @@ class ExerciseCreateView(CreateView):
     fields = ('title', 'muscule_group', 'equipment', 'sets', 'reps', 'weight', 'workout')
     model = models.Exercise
     template_name = 'counter/exercise_create.html'
+    success_url = reverse_lazy('counter:list')
 
 
 class ExerciseDetailView(DetailView):
-    context_object_name = 'exercises'
+    context_object_name = 'exercise'
     # fields = ('title', 'equipment')
     model = models.Exercise
-    template_name = 'counter/exercise_detail'
+    template_name = 'counter/exercise_detail.html'
 
 
 class ExerciseUpdateView(UpdateView):
     fields = ('title', 'muscule_group', 'equipment', 'sets', 'reps', 'weight', 'workout')
-    model = models.Workout
+    model = models.Exercise
+
+
+class ExerciseDeleteView(DeleteView):
+    model = models.Exercise
+    success_url = reverse_lazy('counter:list')

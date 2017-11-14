@@ -8,7 +8,7 @@
 
     <div class="exercises">
         {% for exercise in workout.exercises.all %}
-        <a href="{% url 'counter:exercise_detail' pk=exercise.pk %}"><div class="exercise">
+        <a href="{% url 'counter:exercise_update' pk=exercise.pk %}"><div class="exercise">
             <h2>{{ exercise.title }}</h2>
             <h3>{{ exercise.get_equipment_display }} Exercise</h3>
             <h3>{{ exercise.get_muscule_group_display }}</h3>

@@ -1,15 +1,7 @@
 {% extends "layout.html" %}
 
 {% block side-bar %}
-<div class="side-bar">
-    {% comment %} <h2>Workouts</h2>
-    <ul>
-    {% for workout in workouts  %}
-        <li>
-            <a href="{% url 'counter:update' pk=workout.pk %}">{{ workout.title }}</a>
-        </li>
-    {% endfor %}    
-    </ul>   {% endcomment %}
+<div class="side-bar">  
 </div>
 {% endblock side-bar %}
 

@@ -3,20 +3,19 @@
 {% block content %}
 
 <div class="exercise-detail">
-    <h1>{{ exercise }}</h1>
+    <h1>Confirm {{ exercise }} changes?</h1>
     <h3>{{ exercise.get_muscule_group_display }} | {{ exercise.get_equipment_display }}</h3>
     <p>{{ exercise.description }}</p>
     <hr>
-    <h4>{{ exercise.sets }} | {{ exercise.reps }}</h4>
-    <h4>{{ exercise.weight }}</h4>
+    <h4>{{ exercise.sets }} sets | {{ exercise.reps }} reps</h4>
+    <h4>Weight: {{ exercise.weight }} lbs</h4>
     
-
-    <!-- <p><a href="{% url 'counter:exercise_update' pk=exercise.pk %}" class="btn">Edit</a></p>
-
-    <p><a href="{% url 'counter:update' pk=workout.pk %}" class="btn">Edit</a></p>
-    
-    <p><a href="{% url 'counter:delete' pk=workout.pk %}" class="btn">Delete</a></p> -->
-
-    <a href="{% url 'counter:exercise_create'  %}">Return to list</a>
+    <div class="buttons">
+        <a href="{% url 'counter:exercise_update' pk=exercise.pk %}" class="btn edit">Edit</a>
+        <a href="{% url 'counter:exercise_delete' pk=exercise.pk %}" class="btn delete">Delete</a>
+        <a href="{% url 'counter:list' %}" class="btn return">Yes</a>
+    </div>
 
 </div>
+
+{% endblock %}
