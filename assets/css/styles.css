@@ -125,6 +125,9 @@ a {
     color: white;
 }
 
+form p {
+    padding: 1em;
+}
 
 .footer {
     text-align: center;
@@ -145,8 +148,6 @@ a {
 
 
 /**********Workout List View***********/
-.current-workout{
-}
 .current-workout-block h1 {
     text-align: center;
     background: rgb(223, 222, 222);
@@ -168,6 +169,11 @@ a {
 .current-workout-block li a:hover {
     color: rgb(105, 105, 105);
 }
+.create-workout-list {
+    padding: 1em;
+    margin: 0 auto;
+}
+
 
 /**********Workout Detail View***********/
 .workout-detail {
@@ -201,8 +207,9 @@ a {
     margin: 1em 0;
     background: rgb(247, 247, 247);
     border-radius: 5px;
+    height: 8em;
 }
-.exercise:hover {
+.exercises .exercise:hover {
     background: black;
     color: white;
 }
@@ -216,8 +223,17 @@ a {
     width: 
 }
 
+
+/************* Exercise Detail **************/
+.exercise-detail {
+    padding: 1em 0;
+    text-align: center;
+}
+
+
 /************* Edit Delete Other Buttons **************/
 .buttons {
+    padding-top: 1em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -265,6 +281,8 @@ a {
 .add:hover {
     background: rgb(110, 166, 204);
 }
+
+
 /********* DELETE VIEW ************/
 .delete-view {
     padding: 2em;
@@ -296,4 +314,35 @@ a {
     font-weight: bold;
     border-radius: 5px;
     padding: .5em;
+}
+
+
+.create-workout {
+    margin: 0 auto;
+}
+
+.create-exercise {
+    padding: 1em;
+    margin: 0 auto;
+
+}
+.create-exercise h1, .create-workout h1 {
+    padding: .5em;
+    text-align: center;
+}
+
+
+/****************** MEDIA QUERIES **********************/
+@media screen and (min-width: 700px) {
+    .workout-detail .exercises {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-gap: .25em;
+    }
+
+    .add-exercises {
+        width: 16em;
+        margin: 0 auto;
+    }
+
 }

@@ -1,16 +1,17 @@
-{% extends "layout.html" %}
+{% extends "counter/_layout.html" %}
 
 {% block content %}
+<div class="create-exercise">
+    <h1>Create a New Exercise</h1>
 
-<h1>Create a New Exercise</h1>
-
-<div class="current-workout">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" class="" value="Save">
-        <a href="{% url 'counter:list' %}" class="">Cancel</a>
-    </form>
+    <div class="current-workout">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="" value="Save">
+            <a href="{% url 'counter:list' %}" class="">Cancel</a>
+        </form>
+    </div>
 </div>
 
 {% endblock content %}

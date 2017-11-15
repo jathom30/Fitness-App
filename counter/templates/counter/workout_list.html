@@ -18,13 +18,14 @@
         </ul>  
     </div>
 
-    <h1>Create a New Workout:</h1>
-
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" class="" value="Save">
-    </form>
+    <div class="create-workout-list">
+        <h1>Create a New Workout:</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="" value="Save">
+        </form>
+    </div>
 </div>
 
 {% endblock content %}
