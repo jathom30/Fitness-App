@@ -4,6 +4,7 @@ from django.db import models
 
 # Create your models here.
 class Workout(models.Model):
+    # need title, description, maybe created_at
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255)
     description = models.TextField()
@@ -16,6 +17,7 @@ class Workout(models.Model):
 
 
 class Exercise(models.Model):
+    # need title muscle group, equipment used, sets, reps, weight, workout foreign key
     title = models.CharField(max_length=255)
     MUSCULE_GROUP_CHOICES = (
         ('ch', 'Chest'),

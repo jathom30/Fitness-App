@@ -9,7 +9,7 @@ from django.views.generic import (
 from . import mixins
 from . import models
 
-# Create your views here.
+############# WORKOUT VIEWS #################
 class WorkoutListView(CreateView, ListView):
     context_object_name = 'workouts'
     model = models.Workout
@@ -44,6 +44,7 @@ class WorkoutDeleteView(DeleteView):
     success_url = reverse_lazy('counter:list')
 
 
+############ Exercise views ##############
 class ExerciseCreateView(CreateView):
     fields = ('title', 'muscule_group', 'equipment', 'sets', 'reps', 'weight', 'workout')
     model = models.Exercise
